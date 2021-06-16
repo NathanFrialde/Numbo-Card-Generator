@@ -12,7 +12,9 @@
 		<script src="html2canvas.js"></script>
 		<script>
 			function capture() {
-				html2canvas(document.getElementById("main"), { letterRendering: 1, allowTaint : true, onrendered : function (canvas) {console.log(canvas.toDataURL("image/jpeg", 0.9));} });
+				html2canvas(document.getElementById("main")).then(function(canvas){
+					console.log(canvas.toDataURL("image/jpeg", 0.9));
+				});
 			}
 		</script>
 		<section id="main">
