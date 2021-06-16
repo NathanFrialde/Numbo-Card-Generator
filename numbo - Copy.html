@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+	<head>
+		<title>Numbo Card Generator</title>
+		<script src="jquery.json"></script>
+		<style>
+			p { margin: 0px; }
+			img { width: 73px; height: 73px; display: inline-block; margin-top: -5px; padding: 0px; }
+			#desc { border: 5px solid black; padding: 5px; position: absolute; left: 20px; top: 150px; font-family: Montserrat; width: 400px; }
+		</style>
+	</head>
+	<body onload="start()">
+		<script src="html2canvas.js"></script>
+		<script>
+			function capture() {
+				html2canvas(document.getElementById("main")).then(function(canvas){
+					console.log(canvas.toDataURL("image/jpeg", 0.9));
+				});
+			}
+		</script>
+		<section id="main">
+			<center>
+				<p><font size="6" face="Cambria">Numbo Card Generator</font></p>
+				<p><font size="4" face="Montserrat">made by Julian Gatchalian and Nathan Frialde</font></p><br>
+			<div id="card"><img src="n.png"><img src="u.png"><img src="m.png"><img src="b.png"><img src="o.png"><br>
+			<img src="0.png" id="1"><img src="0.png" id="2"><img src="0.png" id="3"><img src="0.png" id="4"><img src="0.png" id="5"><br>
+			<img src="0.png" id="6"><img src="0.png" id="7"><img src="0.png" id="8"><img src="0.png" id="9"><img src="0.png" id="10"><br>
+			<img src="0.png" id="11"><img src="0.png" id="12"><img src="mathsoc.png"><img src="0.png" id="13"><img src="0.png" id="14"><br>
+			<img src="0.png" id="15"><img src="0.png" id="16"><img src="0.png" id="17"><img src="0.png" id="18"><img src="0.png" id="19"><br>
+			<img src="0.png" id="20"><img src="0.png" id="21"><img src="0.png" id="22"><img src="0.png" id="23"><img src="0.png" id="24"></div>
+			<button onclick="start()">Generate!</button>
+			<button onclick="capture()">Capture!</button>
+			</center>
+			<!--<div id="desc">This is a random numbo card generator for the Numbo game played during Math Week. To create a new card configuration, click "Generate" at the bottom of the card.<br><br><b>Taking a Screenshot</b><br>To take a screenshot of the card, (1) find Snipping Tool on your laptop, or (2) press the Print Screen button on your keyboard and crop the image.<br><br><b>Placing the Screenshot in Word</b><br>The dimensions of the numbo card should be 365 by 438 px. A sample document is posted to guide you throughout making the document.</div>-->
+		</section>
+	</body>
+	<script>
+	var used = new Array(76);
+	var num = [];
+	var number;
+	var col = [0,1,2,3,4,0,1,2,3,4,0,1,3,4,0,1,2,3,4,0,1,2,3,4]
+	function start() {
+		var num = [];
+		var number = 0;
+		var used = [];
+		var used = new Array(76);
+		for (var i = 0; i < 24; i++) {
+			do { number = col[i] * 15 + Math.floor(Math.random() * 15) + 1; }
+			while(used[number]);
+			used[number] = true;
+			num.push(number);
+		}
+		for (var i = 1; i < 25; i++) {
+			var file = document.getElementById(i);
+			switch(num[i-1]) {
+				case 1: file.src = "1.png"; break; case 2: file.src = "2.png"; break; case 3: file.src = "3.png"; break;
+				case 4: file.src = "4.png"; break; case 5: file.src = "5.png"; break; case 6: file.src = "6.png"; break;
+				case 7: file.src = "7.png"; break; case 8: file.src = "8.png"; break; case 9: file.src = "9.png"; break;
+				case 10: file.src = "10.png"; break; case 11: file.src = "11.png"; break; case 12: file.src = "12.png"; break;
+				case 13: file.src = "13.png"; break; case 14: file.src = "14.png"; break; case 15: file.src = "15.png"; break;
+				case 16: file.src = "16.png"; break; case 17: file.src = "17.png"; break; case 18: file.src = "18.png"; break;
+				case 19: file.src = "19.png"; break; case 20: file.src = "20.png"; break; case 21: file.src = "21.png"; break;
+				case 22: file.src = "22.png"; break; case 23: file.src = "23.png"; break; case 24: file.src = "24.png"; break;
+				case 25: file.src = "25.png"; break; case 26: file.src = "26.png"; break; case 27: file.src = "27.png"; break;
+				case 28: file.src = "28.png"; break; case 29: file.src = "29.png"; break; case 30: file.src = "30.png"; break;
+				case 31: file.src = "31.png"; break; case 32: file.src = "32.png"; break; case 33: file.src = "33.png"; break;
+				case 34: file.src = "34.png"; break; case 35: file.src = "35.png"; break; case 36: file.src = "36.png"; break;
+				case 37: file.src = "37.png"; break; case 38: file.src = "38.png"; break; case 39: file.src = "39.png"; break;
+				case 40: file.src = "40.png"; break; case 41: file.src = "41.png"; break; case 42: file.src = "42.png"; break;
+				case 43: file.src = "43.png"; break; case 44: file.src = "44.png"; break; case 45: file.src = "45.png"; break;
+				case 46: file.src = "46.png"; break; case 47: file.src = "47.png"; break; case 48: file.src = "48.png"; break;
+				case 49: file.src = "49.png"; break; case 50: file.src = "50.png"; break; case 51: file.src = "51.png"; break;
+				case 52: file.src = "52.png"; break; case 53: file.src = "53.png"; break; case 54: file.src = "54.png"; break;
+				case 55: file.src = "55.png"; break; case 56: file.src = "56.png"; break; case 57: file.src = "57.png"; break;
+				case 58: file.src = "58.png"; break; case 59: file.src = "59.png"; break; case 60: file.src = "60.png"; break;
+				case 61: file.src = "61.png"; break; case 62: file.src = "62.png"; break; case 63: file.src = "63.png"; break;
+				case 64: file.src = "64.png"; break; case 65: file.src = "65.png"; break; case 66: file.src = "66.png"; break;
+				case 67: file.src = "67.png"; break; case 68: file.src = "68.png"; break; case 69: file.src = "69.png"; break;
+				case 70: file.src = "70.png"; break; case 71: file.src = "71.png"; break; case 72: file.src = "72.png"; break;
+				case 73: file.src = "73.png"; break; case 74: file.src = "74.png"; break; case 75: file.src = "75.png"; break;
+			}
+		}
+	}
+	</script>
+</html>
